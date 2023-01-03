@@ -39,6 +39,7 @@
                     let tg = window.Telegram.WebApp;
                     let data = from + ";" + where + ";" + start_date + ";" + end_date +";" + flying_class +";" + luggage +";" + without_transfer +";" + without_visa
                     tg.sendData(data)
+                    tg.close()
                 }
             } else {
                 alert("Заполните все обязательные поля")
