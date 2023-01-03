@@ -36,10 +36,16 @@
                 } else if (start_date < today){
                     alert ("Дата начала отслеживания должна быть не раньше сегодняшней даты")
                 } else {
-                    let tg = window.Telegram.WebApp;
+                    try {let tg = window.Telegram.WebApp;
+
                     alert(tg.initDataUnsafe.user.id)
                     let data = from + ";" + where + ";" + start_date + ";" + end_date +";" + flying_class +";" + luggage +";" + without_transfer +";" + without_visa
                     tg.sendData(data)
+                    alert(1)}
+                    catch(e) {
+                        alert(e.message)
+                    }
+                    
 
                 }
             } else {
