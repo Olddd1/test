@@ -41,6 +41,7 @@
                     alert(tg.initDataUnsafe.user.id)
                     let data = from + ";" + where + ";" + start_date + ";" + end_date +";" + flying_class +";" + luggage +";" + without_transfer +";" + without_visa
                     tg.sendData(data)
+                    tg.close()
                     alert(1)}
                     catch(e) {
                         alert(e.message)
