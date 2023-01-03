@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    width: 76%;
+    width: 81%;
     margin: 20px auto;
     padding: 25px 2%;
     background-color: #f2f2f2;
@@ -32,6 +32,7 @@ form {
 
 .form_block_item {
     min-width: 100px;
+    margin: 0 0 15px 0;
 }
 
 .form_block_item__title {
@@ -45,7 +46,6 @@ form {
     height: 30px;
     background-color: #d2d2d2;
     border: solid 1px #e5e5e5;
-    margin: 0 0 15px 0;
     padding: 5px;
 }
 
@@ -55,7 +55,6 @@ form {
     justify-content: space-between;
     flex-wrap: wrap;
     min-width: 105px;
-    margin: 0 0 15px 0;
 }
 
 .date_input > input {
@@ -64,7 +63,6 @@ form {
     height: 30px;
     background-color: #d2d2d2;
     border: solid 1px #e5e5e5;
-    margin: 0 0 15px 0;
 }
 
 .watch {
@@ -76,7 +74,7 @@ form {
 }
 
 select {
-    width: 60%;
+    width: 105px;
     min-width: 105px;
     height: 30px;
     background-color: #d2d2d2;
@@ -121,5 +119,11 @@ input[type="checkbox"]:hover {
 @media (max-width: 600px) {
     main {
         width: 86%;
+    }
+}
+
+@media (max-width: 850px) {
+    .second {
+        flex-direction: column;
     }
 }
