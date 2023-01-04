@@ -36,18 +36,18 @@
                 } else if (start_date < today){
                     alert ("Дата начала отслеживания должна быть не раньше сегодняшней даты")
                 } else {
-                    try {
-                        let tg = window.Telegram.WebApp;
-                        let data = from + ";" + where + ";" + start_date + ";" + end_date +";" + flying_class +";" + luggage +";" + without_transfer +";" + without_visa
-                        tg.sendData(data);
-                        tg.close();
-                        alert(1)}
-                    catch(e) {
-                        alert(e.message)
-                        alert(e.stack)
-                    }
-                    
+                    let tg = window.Telegram.WebApp;
 
+                    let data = {"from": from,
+                                "where": where,
+                                "start_date": start_date,
+                                "end_date": end_date,
+                                "flying_class": flying_class,
+                                "luggage": luggage,
+                                "without_transfer": without_transfer,
+                                "without_visa": without_visa}
+
+                    tg.sendData(data)
                 }
             } else {
                 alert("Заполните все обязательные поля")
@@ -89,7 +89,9 @@
                     <p class="form_block_item__title">Класс перелёта</p>
                     <select name="flying_class" id="flying_class">
                         <option value="Y" selected="True">Эконом</option>
-                        <option value="B">Бизнес</option>
+                        <option value="W">Комфорт</option>
+                        <option value="C">Бизнес</option>
+                        <option value="F">Первый класс</option>
                     </select>
                 </div>
                 <div class="form_block_item">
