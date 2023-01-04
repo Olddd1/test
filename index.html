@@ -36,18 +36,15 @@
                 } else if (start_date < today){
                     alert ("Дата начала отслеживания должна быть не раньше сегодняшней даты")
                 } else {
-                    let tg = window.Telegram.WebApp;
+                    try {
+                        let tg = window.Telegram.WebApp;
+                        let data = from + ";" + where + ";" + start_date + ";" + end_date +";" + flying_class +";" + luggage +";" + without_transfer +";" + without_visa
+                        tg.sendData(data)}
+                    catch(e) {
+                        alert(e.message)
+                    }
+                    
 
-                    let data = {"from": from,
-                                "where": where,
-                                "start_date": start_date,
-                                "end_date": end_date,
-                                "flying_class": flying_class,
-                                "luggage": luggage,
-                                "without_transfer": without_transfer,
-                                "without_visa": without_visa}
-
-                    tg.sendData(data)
                 }
             } else {
                 alert("Заполните все обязательные поля")
